@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<title>㈜코코야</title>
+	<meta http-equiv="Pragma" CONTENT="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css"/>
+	
+	<link href="./resources/css/k_layout.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+	<script src="./resources/js/jquery.min.js"> </script>
+	<script src="./resources/js/layout.js"> </script>
+
+<script>
+		(function($){
+			var currentSlideIndex = 0;
+			var tick = null;
+			var LOOP_DURATION = 6000;
+
+			$('.slide-indices li').on('mouseover', function(e) {
+				e.preventDefault();
+				var target = $('a', this).attr('href');
+				var index = $(this).index();
+				showSlide(index);
+			});
+
+			$('#homeBanner .slides li').hide();
+			$('.slide-indices li').first().trigger('mouseover');
+
+		})(jQuery);
+
+
+		function showSlide(index) {
+			if ( tick ) {
+				clearTimeout(tick);
+			}
+			currentSlideIndex = index;
+
+			$('.slide-indices li:eq('+currentSlideIndex+')').addClass('active').siblings().removeClass('active');
+
+			var currentSlide = $('#homeBanner .slides li:eq('+currentSlideIndex+')');
+			currentSlide.stop().fadeIn(500);
+			currentSlide.siblings().stop().fadeOut(50);
+			tick = setTimeout(function(){showNextSlide();}, LOOP_DURATION);
+		}
+
+		function showNextSlide() {
+			currentSlideIndex++;
+			if ( currentSlideIndex == $('#homeBanner .slides li').length ) {
+				currentSlideIndex = 0;
+			}
+			showSlide(currentSlideIndex);
+		};
+
+	</script>
+		
+	<div id="wrapper">
+		<!-- header -->
+		<div id="header">
+			<div class="header-inner">
+				<!-- section -->
+				<div class="section">
+					<div class="logo">
+						<a href="./index.html"><img src="./resources/images/logo.png" alt="㈜코코야" /></a>
+					</div>
+					<!-- nav -->
+					<div id="nav">
+						<ul>
+							<li><a href="./company_info.html" class="headlink n0" rel="company">회사소개</a></li>
+							<li><a href="./business_software.html" class="headlink n1" rel="biz">소프트웨어개발</a></li>
+							<li><a href="./solution.html" class="headlink n2" rel="port">솔루션</a></li>
+						</ul>
+					</div>
+					<!-- /nav -->
+				</div>
+				<!-- /section -->
+			</div>
+			<!-- main-nav-sub -->
+			<div id="main-nav-sub">
+				<div class="nav-section">
+					<dl class="company">
+						<dt>회사소개</dt>
+						<dd>About Company</dd>
+						<dd class="img" style="padding-left: 20px;"><img src="./resources/images/mpic01.png" alt="" /></dd>
+					</dl>
+					<dl class="biz">
+						<dt>소프트웨어개발</dt>
+						<dd>Software Development</dd>
+						<dd class="img" style="padding-left: 50px;"><img src="./resources/images/mpic02.png" alt="" /></dd>
+					</dl>
+					<dl class="port">
+						<dt>솔루션</dt>
+						<dd>Solution</dd>
+						<dd class="img" style="padding-left: 0px;"><img src="./resources/images/mpic03.png" alt="" /></dd>
+					</dl>
+					<ul class="sub0" rel="0">
+						<li><a href='./company_info.html'>회사소개</a></li>
+						<li><a href='./company_performance.html'>주요실적</a></li>
+						<li><a href='./company_organization.html'>조직도</a></li>
+						<li><a href='./company_location.html'>찾아오시는 길</a></li>
+					</ul>
+					<ul class="sub1" rel="1">
+						<li><a href='./business_software.html'>소프트웨어개발</a></li>
+					</ul>
+					<ul class="sub2" rel="2">
+						<li><a href='./solution.html'>솔루션</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- /main-nav-sub -->
+		</div>
+		<!-- /header -->
+		<!-- 슬라이드 이미지 -->
+		<div id="main_pic_bg">
+			<div id="homeBanner" style="height: 627px;">
+				<ul class="slides">
+					<li class="slide active h13" id="event4Banner">
+						<div class="container">
+							<img src="./resources/images/main_txt01.png" alt=""></img>
+						</div>
+					</li>
+					<li class="slide" id="banner1">
+						<div class="container">
+							<img src="./resources/images/main_txt01.png" alt=""></img>
+						</div>
+					</li>
+				</ul>
+				<ul class="slide-indices">
+					<li class="active"></li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<!-- 슬라이드 이미지 -->		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- body -->
+		<div class="main_box">
+			<!-- 왼쪽줄 -->
+			<div class="ml_box">
+				<!-- our business -->
+				<div class="ml_box"><img src="./resources/images/busi_pic.jpg" /></div>
+				<!-- our business -->
+
+
+				<!-- call center -->
+				<div class="cl_box">
+					<ul>
+						<li><img src="./resources/images/call_txt.gif" /></li>
+						<li><img src="./resources/images/call_tit.gif" /></li>
+					</ul>
+				</div>
+				<!-- call center -->
+			</div>
+			<!-- 왼쪽줄 -->
+			<!-- 오른쪽줄 -->
+			<div class="mr_box">
+				<!-- our business -->
+				<div class="mr_box"><a href="./solution.html"><img src="./resources/images/busi_txt.gif" /></a></div>
+				<!-- our business -->
+				<!-- call center -->
+				<div class="pf_box">
+					<ul>
+						<li><img src="./resources/images/port_pic.jpg" /></li>
+						<li><a href="./business_software.html"><img src="./resources/images/port_tit.gif" /></a></li>
+					</ul>
+				</div>
+				<!-- call center -->
+			</div>
+			<!-- 오른쪽줄 -->
+		</div>		
+		
+		<!-- body end -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- bottom 레이아웃 파일-->
+		<div class="footerWrap" id="footer">
+			<div class="footerArea">
+				<div class="leftCon">
+					<address>주소 : 서울특별시 강동구 천호동 432-10 쌍용플래티넘리버 101동 1214호<span><br>전화번호 : 02-2266-1176<span>&nbsp;|&nbsp;</span>팩스 : 02-2267-1176<span>&nbsp;|&nbsp;</span>휴대폰 : 010-4147-3914<span>&nbsp;|&nbsp;</span>이메일 : ysyun@cocoya.co.kr</address>
+					<p class="copyright">COPYRIGHT (C) ㈜코코야 ALL RIGHTS RESERVED.</p>
+				</div>
+			</div>
+		</div>
+	<!-- bottom 레이아웃 파일-->		
+		
+	</div>
+</body>
+</html>		
