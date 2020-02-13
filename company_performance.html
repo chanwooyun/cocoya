@@ -9,57 +9,11 @@
 	<meta http-equiv="Pragma" CONTENT="no-cache" />
 	<meta http-equiv="Cache-Control" content="no-cache" />
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css"/>
-	
+
 	<link href="./resources/css/k_layout.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
-	<script src="./resources/js/jquery.min.js"> </script>
-	<script src="./resources/js/layout.js"> </script>
-
-<script>
-		(function($){
-			var currentSlideIndex = 0;
-			var tick = null;
-			var LOOP_DURATION = 6000;
-
-			$('.slide-indices li').on('mouseover', function(e) {
-				e.preventDefault();
-				var target = $('a', this).attr('href');
-				var index = $(this).index();
-				showSlide(index);
-			});
-
-			$('#homeBanner .slides li').hide();
-			$('.slide-indices li').first().trigger('mouseover');
-
-		})(jQuery);
-
-
-		function showSlide(index) {
-			if ( tick ) {
-				clearTimeout(tick);
-			}
-			currentSlideIndex = index;
-
-			$('.slide-indices li:eq('+currentSlideIndex+')').addClass('active').siblings().removeClass('active');
-
-			var currentSlide = $('#homeBanner .slides li:eq('+currentSlideIndex+')');
-			currentSlide.stop().fadeIn(500);
-			currentSlide.siblings().stop().fadeOut(50);
-			tick = setTimeout(function(){showNextSlide();}, LOOP_DURATION);
-		}
-
-		function showNextSlide() {
-			currentSlideIndex++;
-			if ( currentSlideIndex == $('#homeBanner .slides li').length ) {
-				currentSlideIndex = 0;
-			}
-			showSlide(currentSlideIndex);
-		};
-
-	</script>
-		
 	<div id="wrapper">
 		<!-- header -->
 		<div id="header">
@@ -116,43 +70,8 @@
 			<!-- /main-nav-sub -->
 		</div>
 		<!-- /header -->
-		<!-- 슬라이드 이미지 -->
-		<div id="main_pic_bg">
-			<div id="homeBanner" style="height: 627px;">
-				<ul class="slides">
-					<li class="slide active h13" id="event4Banner">
-						<div class="container">
-							<img src="./resources/images/main_txt01.png" alt=""></img>
-						</div>
-					</li>
-					<li class="slide" id="banner1">
-						<div class="container">
-							<img src="./resources/images/main_txt01.png" alt=""></img>
-						</div>
-					</li>
-				</ul>
-				<ul class="slide-indices">
-					<li class="active"></li>
-					<li></li>
-				</ul>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-		<!-- 슬라이드 이미지 -->		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
 		<!-- body -->
 		<div class="submenu_bar">
 			<div class="submenu">
@@ -187,23 +106,23 @@
 		<!--서브 컨텐츠 끝-->
 		</div>
 		<!--서브 박스 끝-->
-		
+
 		<!-- body end -->
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		<!-- bottom 레이아웃 파일-->
 		<div class="footerWrap" id="footer">
 			<div class="footerArea">
@@ -213,8 +132,8 @@
 				</div>
 			</div>
 		</div>
-	<!-- bottom 레이아웃 파일-->		
-		
+	<!-- bottom 레이아웃 파일-->
+
 	</div>
 </body>
-</html>		
+</html>
