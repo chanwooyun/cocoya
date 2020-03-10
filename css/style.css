@@ -1259,6 +1259,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 
 #contact {
+  background: #fff;
+  background-size: cover;
   padding: 60px 0;
 }
 
